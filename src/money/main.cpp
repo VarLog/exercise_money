@@ -80,6 +80,8 @@ int runCalculateSum(int argc, char** argv)
 
 int main(int argc, char** argv)
 {
+    std::ios_base::sync_with_stdio(false);
+
     auto app = std::string(argv[0]);
 
     auto pos = app.find_last_of("/");
