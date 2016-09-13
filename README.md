@@ -8,7 +8,7 @@ Simple exercise:
 ## Source structure
 
 * `src/money` contains whole the implementation;
-* `src/test` contains Google C++ Testing Framework tests.
+* `test/money` contains Google C++ Testing Framework tests.
 
 ## Build
 
@@ -18,8 +18,8 @@ Use CMake:
 > mkdir build
 > cd build
 > cmake ..
-> make -j8
-> 
+> make
+> ./bin/money
 ...
 ```
 
@@ -29,7 +29,7 @@ For testing purposes this project uses Google C++ Testing Framework. To enable t
 
 ```
 > cmake -DENABLE_TESTS=ON ..
-> make -j8
-> ./money_test
+> make
+> ./bin/money_test
 ...
 ```
