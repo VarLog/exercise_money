@@ -1,0 +1,63 @@
+user-i157:~/workspace/money/build $ for x in 10 20 50 100 200 500 1000 2000 5000 10000; do time ./bin/money $x; done
+num: 10
+calculateSum res: 20
+
+real    0m0.003s
+user    0m0.001s
+sys     0m0.002s
+num: 20
+calculateSum res: 87
+
+real    0m0.003s
+user    0m0.001s
+sys     0m0.001s
+num: 50
+calculateSum res: 582
+
+real    0m0.003s
+user    0m0.002s
+sys     0m0.002s
+num: 100
+calculateSum res: 2402
+
+real    0m0.004s
+user    0m0.006s
+sys     0m0.002s
+num: 200
+calculateSum res: 9793
+
+real    0m0.012s
+user    0m0.035s
+sys     0m0.002s
+num: 500
+calculateSum res: 61941
+
+real    0m0.162s
+user    0m0.569s
+sys     0m0.003s
+num: 1000
+calculateSum res: 248838
+
+real    0m1.227s
+user    0m3.613s
+sys     0m0.023s
+num: 2000
+calculateSum res: 997607
+
+real    0m9.859s
+user    0m19.401s
+sys     0m0.042s
+num: 5000
+calculateSum res: 6243839
+
+real    2m41.888s
+user    4m49.313s
+sys     0m0.375s
+num: 10000
+calculateSum res: 24987460
+
+real    22m35.712s
+user    39m40.540s
+sys     0m4.603s
+user-i157:~/workspace/money/build $
+

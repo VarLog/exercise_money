@@ -29,12 +29,12 @@ int runIsDivisible(int argc, char** argv)
     }
 
     auto denoms = mn::getDenominators(num);
-    std::cout << "denoms: ";
-    for(auto n : denoms)
-    {
-        std::cout << n << " ";
-    }
-    std::cout << std::endl;
+    //std::cout << "denoms: ";
+    //for(auto n : denoms)
+    //{
+    //    std::cout << n << " ";
+    //}
+    //std::cout << std::endl;
 
     std::cout << "num: " << num << std::endl;
     std::cout << "count: " << num << std::endl;
@@ -63,12 +63,12 @@ int runCalculateSum(int argc, char** argv)
     }
 
     auto denoms = mn::getDenominators(num);
-    std::cout << "denoms: ";
-    for(auto n : denoms)
-    {
-        std::cout << n << " ";
-    }
-    std::cout << std::endl;
+    //std::cout << "denoms: ";
+    //for(auto n : denoms)
+    //{
+    //    std::cout << n << " ";
+    //}
+    //std::cout << std::endl;
 
     std::cout << "num: " << num << std::endl;
 

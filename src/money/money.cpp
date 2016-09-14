@@ -46,11 +46,11 @@ bool isDivisibleImpl(const int num, const int count, const std::vector<int>& den
         return false;
     }
 
-    for(auto k = 0; k < step; ++k)
-    {
-        std::cout << "    ";
-    }
-    std::cout << "isDivisibleImpl( " << num << " " << count << " )" << std::endl;
+    //for(auto k = 0; k < step; ++k)
+    //{
+    //    std::cout << "    ";
+    //}
+    //std::cout << "isDivisibleImpl( " << num << " " << count << " )" << std::endl;
 
     auto res = false;
 
@@ -61,7 +61,7 @@ bool isDivisibleImpl(const int num, const int count, const std::vector<int>& den
 
         if(rest == 0 && div == count)
         {
-            std::cout << "rest == 0; success" << std::endl;
+            //std::cout << "rest == 0; success" << std::endl;
             res = true;
             break;
         }
@@ -114,19 +114,23 @@ std::vector<int> getDenominators(const int max)
 
 bool isDivisible(const int num, const int count, const std::vector<int>& denoms)
 {
-    std::cout << "isDivisible( " << num << " " << count << " )" << std::endl;
+    //std::cout << "isDivisible( " << num << " " << count << " )" << std::endl;
     return impl::isDivisibleImpl(num, count, denoms, denoms.size()-1, 0);
 }
 
 int calculateSum(const int num, const std::vector<int>& denoms)
 {
     auto res = 0;
+    #pragma omp parallel for reduction(+:res)
     for(auto i = 0; i < num; ++i)
     {
+        auto sum = 0;
+        #pragma omp parallel for reduction(+:sum)
         for(auto j = 0; j < num; ++j)
         {
-            res += (isDivisible(i+1, j+1, denoms) ? 1 : 0);
+            sum += (isDivisible(i+1, j+1, denoms) ? 1 : 0);
         }
+        res += sum;
     }
     return res;
 }
