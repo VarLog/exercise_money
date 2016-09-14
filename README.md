@@ -23,6 +23,13 @@ Use CMake:
 ...
 ```
 
+You can enable OpenMP to improve performance:
+
+```
+> cmake -DENABLE_OPENMP=ON ..
+...
+```
+
 ## Tests
 
 For testing purposes this project uses Google C++ Testing Framework. To enable tests you should define `ENABLE_TESTS=ON` variable:
@@ -69,6 +76,19 @@ isDivisible( 18370 18368 )
 isDivisible( 18370 18369 )
 isDivisible( 18370 18370 )
 calculateSum res: 84340880
+>
+```
+
+OpenMP version:
+
+```
+> time ./build-openmp-release/bin/money 18370
+num: 18370
+calculateSum res: 84340880
+
+real    67m47.958s
+user    114m5.329s
+sys     0m9.860s
 >
 ```
 
