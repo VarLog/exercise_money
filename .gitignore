@@ -28,7 +28,8 @@
 *.app
 
 # Build directories
-build
+/build*
+/results
 
 # Apple Desktop Services Store
 .DS_Store
